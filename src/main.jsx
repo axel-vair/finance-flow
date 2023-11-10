@@ -5,13 +5,15 @@ import NavbarDisconnect from './pages/Home/navbarDisconnect.jsx'
 import NavbarConnect from './pages/Home/navbarConnect.jsx'
 import FormRegister from './pages/Home/formRegister.jsx'
 import './main.css'
+import DisplayTransactions from "./pages/Home/displayTransactions.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <NavbarDisconnect />
-    <NavbarConnect />
-    <Index />
-    <FormRegister />
+    <React.StrictMode>
+        <NavbarDisconnect/>
+        <NavbarConnect/>
+        <Index/>
+        <FormRegister/>
+        <DisplayTransactions />
 
-  </React.StrictMode>,
+    </React.StrictMode>,
 )
