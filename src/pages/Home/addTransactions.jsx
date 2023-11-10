@@ -1,4 +1,6 @@
 import {useState} from "react";
+import { format } from 'date-fns';
+
 function FormTransaction() {
     const [transaction, setTransaction] = useState({
         amount: "",
@@ -18,20 +20,25 @@ function FormTransaction() {
         const allInputValue = {
             amount: transaction.amount,
             title: transaction.title,
-            date: transaction.date,
+            date: format(new Date(transaction.date), 'dd/MM/yyyy HH:mm:ss'),
             description: transaction.description,
             place: transaction.place,
             point: transaction.point
         }
 
-        let data = await fetch("http://localhost:9092/api/  ", {
+        let data = await fetch("http://localhost:9092/api/transactions", {
             method: "POST",
             headers: {
+                'Content-Type': 'application/json',
                 'Origin': 'http://localhost:5173',
             },
             body: JSON.stringify(allInputValue)
         });
-    }
+
+        if (!data.ok) {
+            throw new Error(`${data.status}`);
+        }
+    };
 
         return (
             <div className="addTransactions">
