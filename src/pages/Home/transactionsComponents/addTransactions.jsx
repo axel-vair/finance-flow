@@ -26,18 +26,16 @@ function FormTransaction() {
             point: transaction.point
         }
 
-        let data = await fetch("http://localhost:9092/api/transactions", {
+        let data= await fetch("http://localhost:9092/api/transactions", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Origin': 'http://localhost:5173',
             },
             body: JSON.stringify(allInputValue)
+
         });
 
-        if (!data.ok) {
-            throw new Error(`${data.status}`);
-        }
     };
 
         return (

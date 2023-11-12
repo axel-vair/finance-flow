@@ -1,4 +1,4 @@
-import './index.css';
+import '../index.css';
 import { useEffect, useState } from 'react';
 
 function DisplayTransactions() {
@@ -19,7 +19,7 @@ function DisplayTransactions() {
             })
             .then((data) => setTransactions(data))
             .catch((error) => console.error("Erreur lors de la requête Fetch :", error));
-    }, []); // Empty dependency array means this effect will run once when the component mounts
+    }, [transactions]); // Empty dependency array means this effect will run once when the component mounts, else rerender
 
     return (
         <main>
