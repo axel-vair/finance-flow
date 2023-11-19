@@ -22,7 +22,7 @@ function DisplayTransactions() {
     }, []); // Empty dependency array means this effect will run once when the component mounts
 
     return (
-        <main>
+        <div>
             {transactions.map((transactionsObj, index) => (
                 <li key={index}>
                     <div>Title: {transactionsObj.title}</div>
@@ -30,7 +30,8 @@ function DisplayTransactions() {
                     <div>Date: {transactionsObj.date}</div>
                 </li>
             ))}
-        </main>
+        </div>
+
     );
 }
 
