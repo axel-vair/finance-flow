@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { format } from 'date-fns';
+import {format} from 'date-fns';
 
 function FormTransaction() {
     const [transaction, setTransaction] = useState({
@@ -40,45 +40,64 @@ function FormTransaction() {
         }
     };
 
-        return (
-            <div className="addTransactions">
+    return (
+        <form className="flex justify-center" onSubmit={handleSubmit}>
+            <div className="w-full addTransactions w-3/12">
+                <label name="amount">
+                    Montant:
+                </label>
+                <input type="number" id="amount" name="amount" value={transaction.amount}
+                       className="block rounded-md p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-emerald-500 sm:text-sm sm:leading-6"
+                       onChange={handleChange}/>
 
-                <form onSubmit={handleSubmit}>
+                <label name="title">
+                    Titre:
+                </label>
+                <input type="text" name="title" id="title" value={transaction.title}
+                       className="block w-full rounded-md p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-emerald-500 sm:text-sm sm:leading-6"
+                       onChange={handleChange}/>
 
-                    <label name="amount">
-                        Montant:
-                    </label>
-                    <input type="number" id="amount" name="amount" value={transaction.amount} onChange={handleChange}/>
 
-                    <label name="title">
-                        Titre:
-                    </label>
-                    <input type="text" name="title" id="title" value={transaction.title} onChange={handleChange}/>
+                <label name="description">
+                    Description:
+                </label>
+                <input type="text" name="description" id="description" value={transaction.description}
+                       className="block w-full rounded-md p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-emerald-500 sm:text-sm sm:leading-6"
+                       onChange={handleChange}/>
 
-                    <label name="date">
-                        date:
-                    </label>
-                    <input type="date" name="date" id="date" value={transaction.date} onChange={handleChange}/>
+                <label name="place">
+                    place:
+                </label>
+                <input type="text" name="place" id="place" value={transaction.place}
+                       className="block w-full rounded-md p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-emerald-500 sm:text-sm sm:leading-6"
+                       onChange={handleChange}/>
 
-                    <label name="description">
-                        Description:
-                    </label>
-                    <input type="text" name="description" id="description" value={transaction.description} onChange={handleChange}/>
+                <label name="date">
+                    date:
+                </label>
+                <input type="date" name="date" id="date" value={transaction.date}
+                       className="block rounded-md p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-emerald-500 sm:text-sm sm:leading-6"
+                       onChange={handleChange}/>
 
-                    <label name="place">
-                        place:
-                    </label>
-                    <input type="text" name="place" id="place" value={transaction.place} onChange={handleChange}/>
 
-                    <label name="point">
-                        Pointer:
-                    </label>
-                    <input type="checkbox" name="point" id="point" value={transaction.point} onChange={handleChange}/>
+                <label name="point">
+                    Pointer:
+                </label>
+                <input type="checkbox" name="point" id="point" value={transaction.point}
+                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                       onChange={handleChange}/>
 
-                    <button type="submit">Envoyer</button>
-                </form>
+                <div>
+                    <button type="submit"
+                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                    >Envoyer
+                    </button>
+                </div>
             </div>
-        )
+        </form>
+
+    )
 
 }
+
 export default FormTransaction;
