@@ -13,7 +13,7 @@ function NavbarConnect() {
             <button className="account bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">
                 Mon compte
             </button>
-            <button className="graphbg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">
+            <button className="graph bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">
                 Représentation graphique
             </button>
 
