@@ -15,8 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <NavbarConnect/>
         <Index/>
         <FormRegister/>
-        <DisplayTransactions/>
         <AddTransactions/>
-
+        <DisplayTransactions/>
     </React.StrictMode>,
 )
