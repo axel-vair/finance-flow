@@ -66,7 +66,7 @@ function FormRegister() {
 
                 <div>
                     <button type="submit"
-                            className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Envoyer
+                            className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Enregistrez-vous !
                     </button>
                 </div>
             </div>
