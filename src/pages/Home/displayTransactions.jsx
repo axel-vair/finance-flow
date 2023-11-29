@@ -5,18 +5,39 @@ function DisplayTransactions() {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9092/api/transactions", {
-            method: 'GET',
-            headers: {
-                'Origin': 'http://localhost:5173',
-            }
-        })
-            .then(response => response.json()) // Parse the response as JSON
-            .then(data => {
-                setTransactions(data);
-            });
-    }); // Empty dependency array to run the effect only once on mount
+        let isMounted = true;
 
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://localhost:9092/api/transactions", {
+                    method: 'GET',
+                    headers: {
+                        'Origin': 'http://localhost:5173',
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                if (isMounted) {
+                    console.log('Data fetched successfully:', data);
+                    setTransactions(data);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+    
     return (
         <div id="displayAllTransaction" className="flex flex-col items-center text-center overflow-auto m-1.5">
             {transactions.map((transactionsObj, index) => (
@@ -39,4 +60,3 @@ function DisplayTransactions() {
 }
 
 export default DisplayTransactions;
-
