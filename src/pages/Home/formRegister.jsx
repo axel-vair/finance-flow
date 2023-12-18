@@ -9,6 +9,9 @@ function FormRegister() {
         password: "",
         checkPassword: "",
     });
+
+
+
     const handleChangeRegister = (e) => {
         const {name, value} = e.target
         setRegister({...register, [name]: value})
@@ -41,7 +44,7 @@ function FormRegister() {
     };
 
     return (
-        <form className="flex justify-center" onSubmit={handleSubmitRegister}>
+        <form className="flex justify-center m-1.5" onSubmit={handleSubmitRegister}>
             <div className="w-full addregisters w-3/12">
                 <label name="mail">
                     Mail:
@@ -66,11 +69,12 @@ function FormRegister() {
 
                 <div>
                     <button type="submit"
-                            className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Enregistrez-vous !
+                            className="m-1.5 bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Enregistrez-vous !
                     </button>
                 </div>
             </div>
         </form>
+        
 
 
     )

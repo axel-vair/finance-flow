@@ -41,7 +41,7 @@ function FormTransaction() {
     };
 
     return (
-        <form className="flex justify-center" onSubmit={handleSubmit}>
+        <form className="flex justify-center m-1.5" onSubmit={handleSubmit}>
             <div className="w-full addTransactions w-3/12">
                 <label name="amount">
                     Montant:

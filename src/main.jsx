@@ -12,13 +12,8 @@ import AddTransactions from "./pages/Home/addTransactions.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <NavbarDisconnect/>
+        {/* <NavbarDisconnect/> */}
         <NavbarConnect/>
         <Index/>
-        <FormRegister/>
-        <FormConnect/>
-        
-        <AddTransactions/>
-        <DisplayTransactions/>
     </React.StrictMode>,
 )
