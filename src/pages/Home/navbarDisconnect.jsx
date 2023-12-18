@@ -1,14 +1,29 @@
 import './index.css'
+import {useState} from "react"
+import FormRegister from './formRegister.jsx'
+import FormConnect from './formConnect.jsx'
+import ButtonConnectForm from './buttonConnect.jsx';
+import ButtonRegisterForm from './buttonRegister.jsx';
+
 
 function NavbarDisconnect() {
+    let [isOpenConnect, setIsOpenConnect] = useState(false);
+    let [isOpenRegister, setIsOpenRegister] = useState(false);
+
+
+
     return (
-        <div className="navbar">
-            <button className="register bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">
-                Inscription
-            </button>
-            <button className="connection py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-200 hover:bg-gray-100 hover:text-emerald-500 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 rounded">
-                Connexion
-            </button>
+        <div >
+            <div className="flex justify-items-center w-full m-1.5">
+                {/* <ButtonRegisterForm isOpenRegister={isOpenRegister} setIsOpenRegister={setIsOpenRegister}/> */}
+                <ButtonConnectForm isOpenConnect={isOpenConnect} setIsOpenConnect={setIsOpenConnect}/>
+            </div>
+            <div className="flex justify-items-center w-full m-1.5">        
+                {isOpenConnect === false ? <FormRegister /> : <FormConnect />}
+
+            </div>
+
+
         </div>
     )
 }

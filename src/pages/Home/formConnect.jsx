@@ -21,7 +21,7 @@ function FormConnect() {
             password: connect.password,
         }
 
-        let data = await fetch("http://localhost:9092/api/users/connect", {
+        let data = await fetch("http://localhost:9092/api/users/checkUser", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function FormConnect() {
     };
 
     return (
-        <form className="flex justify-center" onSubmit={handleSubmitConnect}>
+        <form className="flex justify-center m-1.5" onSubmit={handleSubmitConnect}>
             <div className="w-full addConnects w-3/12">
                 <label name="mail">
                     Mail:
@@ -59,7 +59,7 @@ function FormConnect() {
 
                 <div>
                     <button type="submit"
-                            className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Connectez-vous !
+                            className="m-1.5 bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 mx-4 rounded">Connectez-vous !
                     </button>
                 </div>
             </div>
