@@ -20,7 +20,7 @@ function FormTransaction() {
         const allInputValue = {
             amount: transaction.amount,
             title: transaction.title,
-            date: format(new Date(transaction.date), 'dd/MM/yyyy HH:mm:ss'),
+            date: format(new Date(transaction.date), 'dd/MM/yyyy'),
             description: transaction.description,
             place: transaction.place,
             point: transaction.point
@@ -34,6 +34,7 @@ function FormTransaction() {
             },
             body: JSON.stringify(allInputValue)
         });
+
 
         if (!data.ok) {
             throw new Error(`${data.status}`);

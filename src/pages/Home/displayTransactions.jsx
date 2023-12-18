@@ -1,7 +1,7 @@
-import './index.css';
 import { useEffect, useState } from 'react';
 
-function DisplayTransactions() {
+
+const DisplayTransactions = () => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function DisplayTransactions() {
             .then(data => {
                 setTransactions(data);
             });
-    }); // Empty dependency array to run the effect only once on mount
+    }, []); // Empty dependency array to run the effect only once on mount
 
     return (
         <div className="flex flex-col items-center text-center mb-4 mt-4">
@@ -39,3 +39,4 @@ function DisplayTransactions() {
 }
 
 export default DisplayTransactions;
+
