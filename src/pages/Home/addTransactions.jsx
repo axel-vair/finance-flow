@@ -41,7 +41,7 @@ function FormTransaction() {
     };
 
     return (
-        <form className="flex justify-center m-1.5" onSubmit={handleSubmit}>
+        <form className="fix px-16 py-8 bg-yellow-50 max-h-[25rem] z-50" onSubmit={handleSubmit}>
             <div className="w-full addTransactions w-3/12">
                 <label name="amount">
                     Montant:
